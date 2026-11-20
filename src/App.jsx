@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <div>
-        <Counter />
+        <ToggleMessage />
       </div>
       {/* <footer>
         &copy; {new Date().getFullYear()} Personal Introduction
@@ -86,6 +86,22 @@ function Counter(){
 }
 
 
+
+function ToggleMessage(){
+  let [isVisible, setIsVisbile] = useState(false)
+  function toggleVisibility(){
+    setIsVisbile(!isVisible);
+  }
+  return (
+    <div>
+      {isVisible && <p>Welcome to React!</p>}
+
+      <button type="button" onClick={toggleVisibility}>
+        {isVisible? "Hide Message":"Show Message"}
+      </button>
+    </div>
+  );
+}
 
 export default App
 
